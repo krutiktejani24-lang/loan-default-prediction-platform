@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+mlruns/
+mlflow.db
+great_expectations/uncommitted/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.DS_Store
+data/*.csv
+!data/sample_loan_data.csv

@@ -1,0 +1,15 @@
+# Regulatory gate thresholds — these decide whether a candidate model
+# is allowed to be pushed to the MLflow Model Registry ("Staging"/"Production").
+model_metrics:
+  min_f1_score: 0.75
+  min_precision: 0.70
+  min_recall: 0.65
+  min_roc_auc: 0.75
+
+data_quality:
+  max_null_fraction: 0.02          # per-column max allowed null rate
+  min_row_count: 500                # candidate training set must have this many rows
+
+registry:
+  model_name: "loan-default-classifier"
+  gate_stage: "Staging"              # stage the gate promotes the model to on success

@@ -1,0 +1,15 @@
+{
+  "expectation_suite_name": "loan_default_suite",
+  "notes": "Reference copy of the expectation suite. The authoritative, executable version is defined in code at src/data/schema.py (build_expectation_suite) so it always stays in sync with the CI gate.",
+  "expectations": [
+    {"expectation_type": "expect_table_columns_to_match_set", "kwargs": {"column_set": ["age","annual_income","loan_amount","credit_score","debt_to_income","employment_years","num_open_accounts","delinquencies_2yrs","loan_term_months","home_ownership","default"], "exact_match": true}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "age", "min_value": 18, "max_value": 100}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "credit_score", "min_value": 300, "max_value": 850}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "annual_income", "min_value": 0, "max_value": 10000000}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "loan_amount", "min_value": 0, "max_value": 1000000}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "debt_to_income", "min_value": 0, "max_value": 5}},
+    {"expectation_type": "expect_column_values_to_be_in_set", "kwargs": {"column": "home_ownership", "value_set": ["RENT", "OWN", "MORTGAGE"]}},
+    {"expectation_type": "expect_column_values_to_be_in_set", "kwargs": {"column": "default", "value_set": [0, 1]}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "credit_score", "mostly": 0.98}}
+  ]
+}
